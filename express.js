@@ -12,6 +12,10 @@ const async   = require('async');
 const path    = require('path');
 //const arango  = require('arangojs');
 
+// middleware
+const morgan = require('morgan');
+const bodyP  = require('body-parser');
+
 module.exports = (dbctl, log, stage) => {
   'use strict';
 
@@ -32,7 +36,8 @@ module.exports = (dbctl, log, stage) => {
   let app = express();
 
   // middleware.
-
+  app.use(morgan('dev'));
+  app.use(bodyP.json());
 
   log('middleware loaded')
 
@@ -62,7 +67,11 @@ module.exports = (dbctl, log, stage) => {
           }
 
           // execute eroute "constructor"
-          let router = eroute(new express.Router(), dbctl);
+          let router = eroute(new express.Router(), dbctl, function() {
+            let args = Array.prototype.slice.call(arguments, 0);
+            args[0]  = 'main: '+stage.Sub+ ' stage '+ stage.Stage + ' ('+mount+'): ' + args[0];
+            console.log.apply(console, args);
+          });
 
           // Hook in the newly created route.
           app.use(mount, router);

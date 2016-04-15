@@ -1,7 +1,7 @@
 {
-  "name": "vtbackend",
+  "name": "swarmd",
   "version": "1.0.0",
-  "description": "Verteilt Backend",
+  "description": "Swarm's backend.",
   "main": "index.js",
   "scripts": {
     "test": "mocha",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/verteilt/backend.git"
+    "url": "git+https://github.com/jaredallard/swarmd.git"
   },
   "keywords": [
     "vtbackend",
@@ -18,16 +18,16 @@
   "author": "Jared Allard <jaredallard@outlook.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/verteilt/backend/issues"
+    "url": "https://github.com/jaredallard/swarmd/issues"
   },
-  "homepage": "https://github.com/verteilt/backend#readme",
+  "homepage": "https://github.com/jaredallard/swarmd#readme",
   "dependencies": {
     "arangojs": "^4.3.0",
     "async": "^2.0.0-rc.2",
+    "body-parser": "^1.15.0",
     "express": "^4.13.4",
-    "oauthorize": "^0.1.0",
-    "passport": "^0.3.2",
-    "redis": "^2.6.0-1"
+    "kue": "^0.10.5",
+    "morgan": "^1.7.0"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
