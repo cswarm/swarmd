@@ -1,8 +1,8 @@
-# vtbackend
+# swarmd
 
 [![Circle CI](https://circleci.com/gh/verteilt/backend/tree/master.svg?style=svg)](https://circleci.com/gh/verteilt/backend/tree/master)
 
-Backend Service in [Node.js](https://nodejs.org) for Verteilt
+Backend Service in [Node.js](https://nodejs.org)
 
 ## Installation
 
