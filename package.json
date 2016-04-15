@@ -4,7 +4,7 @@
   "description": "Swarm's backend.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha",
+    "test": "node_modules/.bin/mocha",
     "start": "node index.js"
   },
   "repository": {
